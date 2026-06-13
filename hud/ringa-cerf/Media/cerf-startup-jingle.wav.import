@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cerf-startup-jingle.wav-67877c26569ab4b92251a6bdd931c109.sample"
+
+[deps]
+
+source_file="res://MoreHuds/hud/ringa-cerf/Media/cerf-startup-jingle.wav"
+dest_files=[ "res://.import/cerf-startup-jingle.wav-67877c26569ab4b92251a6bdd931c109.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

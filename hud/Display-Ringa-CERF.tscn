@@ -1,0 +1,488 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://hud/Display-CERF.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hud/trtl/ShipParams.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hud/SensorDisplay.gd" type="Script" id=3]
+[ext_resource path="res://hud/cerf-small.theme" type="Theme" id=4]
+[ext_resource path="res://hud/cerf-mid.theme" type="Theme" id=5]
+[ext_resource path="res://MoreHuds/hud/ringa-cerf/ringa-cerf-startup-jingle.wav" type="AudioStream" id=6]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewports/VisfeedViewport/VisFeedBox/EnceladusFeed/CustomViewportContainer/Viewport")
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewports/LidarViewport")
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("Viewports/VisfeedViewport")
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("Corner-BL/CargoMargin/CargoScanner/ViewportContainer/Viewport")
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("FollowMicroseismicTarget/Offset/PanelContainer/RemoteSpectrometer/RemoteScanner/ViewportContainer/Viewport")
+
+[node name="Display" instance=ExtResource( 1 )]
+
+[node name="TextureRect" parent="Viewports/VisfeedViewport/VisFeedBox/EnceladusFeed" index="1"]
+texture = SubResource( 1 )
+
+[node name="Top" parent="Top" index="0"]
+margin_left = 515.0
+margin_right = 765.0
+margin_bottom = 84.0
+
+[node name="VBoxContainer" parent="Top/Top" index="0"]
+margin_top = 0.0
+margin_bottom = 84.0
+
+[node name="VBoxContainer2" parent="Top/Top" index="1"]
+visible = false
+
+[node name="VBoxContainer3" parent="Top/Top" index="2"]
+visible = false
+
+[node name="LidarProxy" parent="Corner-TR" index="1"]
+texture = SubResource( 2 )
+
+[node name="Side-R" parent="." index="7"]
+margin_left = -176.0
+margin_top = -1.52588e-05
+margin_right = 245.0
+
+[node name="GridContainer" parent="Side-R/HBoxContainer" index="0"]
+visible = false
+
+[node name="MarginContainer" parent="Side-R/HBoxContainer" index="1"]
+margin_left = 0.0
+margin_right = 180.0
+
+[node name="VisfeedProxy" parent="Corner-TL" index="1"]
+texture = SubResource( 3 )
+
+[node name="Proxy" parent="Corner-BL/CargoMargin/CargoScanner" index="1"]
+texture = SubResource( 4 )
+
+[node name="Proxy" parent="FollowMicroseismicTarget/Offset/PanelContainer/RemoteSpectrometer/RemoteScanner" index="2"]
+texture = SubResource( 5 )
+
+[node name="AudioStreamPlayer" parent="BooterCERF" index="2"]
+stream = ExtResource( 6 )
+
+[node name="Bottom" type="MarginContainer" parent="." index="19"]
+anchor_left = 0.282
+anchor_top = 0.77
+anchor_right = 0.291
+anchor_bottom = 0.775
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom" index="0"]
+margin_right = 561.0
+margin_bottom = 164.0
+alignment = 1
+
+[node name="VelocityStats" type="HBoxContainer" parent="Bottom/VBoxContainer" index="0"]
+margin_right = 561.0
+margin_bottom = 84.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Bottom/VBoxContainer/VelocityStats" index="0"]
+margin_top = 9.0
+margin_right = 250.0
+margin_bottom = 74.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AutopilotVelocityCurrent" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer2" index="0"]
+margin_right = 250.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "0.0"
+align = 1
+script = ExtResource( 3 )
+sensor = "velocity"
+format = "%0.1f"
+empty = ""
+maxWarn = 50.0
+maxErr = 150.0
+okColor = Color( 1, 0.184314, 0.160784, 1 )
+warnColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+errColor = Color( 1, 1, 1, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer2" index="1"]
+margin_top = 38.0
+margin_right = 250.0
+margin_bottom = 65.0
+custom_constants/margin_right = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer2/MarginContainer" index="0"]
+margin_left = 60.0
+margin_right = 177.0
+margin_bottom = 27.0
+size_flags_horizontal = 4
+theme = ExtResource( 4 )
+custom_constants/separation = 13
+
+[node name="AutopilotVelocityTarget" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer2/MarginContainer/HBoxContainer" index="0"]
+margin_right = 65.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 65, 0 )
+text = "0.0"
+align = 2
+script = ExtResource( 3 )
+sensor = "autopilot.velocity"
+format = "%0.1f"
+empty = ""
+maxWarn = 50.1
+maxErr = 150.0
+okColor = Color( 1, 0.184314, 0.160784, 1 )
+warnColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+errColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="AutopilotVelocityUnit" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer2/MarginContainer/HBoxContainer" index="1"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 78.0
+margin_right = 117.0
+margin_bottom = 27.0
+text = "m/s"
+align = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Bottom/VBoxContainer/VelocityStats" index="1"]
+margin_left = 254.0
+margin_right = 504.0
+margin_bottom = 84.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 5 )
+alignment = 1
+
+[node name="AutopilotVelocityCurrent" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer3" index="0"]
+margin_right = 250.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "0.0"
+align = 1
+script = ExtResource( 3 )
+sensor = "acceleration"
+format = "%0.1f"
+empty = ""
+maxWarn = 50.0
+maxErr = 150.0
+okColor = Color( 1, 0.184314, 0.160784, 1 )
+warnColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+errColor = Color( 1, 1, 1, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer3" index="1"]
+margin_top = 57.0
+margin_right = 250.0
+margin_bottom = 84.0
+custom_constants/margin_right = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer3/MarginContainer" index="0"]
+margin_left = 54.0
+margin_right = 184.0
+margin_bottom = 27.0
+size_flags_horizontal = 4
+theme = ExtResource( 4 )
+custom_constants/separation = 13
+
+[node name="AutopilotVelocityTarget" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer3/MarginContainer/HBoxContainer" index="0"]
+margin_right = 65.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 65, 0 )
+text = "0.0"
+align = 2
+script = ExtResource( 3 )
+sensor = "autopilot.acceleration"
+format = "%0.1f"
+empty = ""
+maxWarn = 50.1
+maxErr = 150.0
+okColor = Color( 1, 0.184314, 0.160784, 1 )
+warnColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+errColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="AccelerationUnit" type="Label" parent="Bottom/VBoxContainer/VelocityStats/VBoxContainer3/MarginContainer/HBoxContainer" index="1"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 78.0
+margin_right = 130.0
+margin_bottom = 27.0
+text = "m/s²"
+align = 2
+
+[node name="GridContainer" parent="Bottom/VBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 108.0
+margin_right = 561.0
+margin_bottom = 164.0
+size_flags_vertical = 4
+columns = 9
+
+[node name="dVLabel" parent="Bottom/VBoxContainer/GridContainer" index="0"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_right = 105.0
+
+[node name="dvReadout" parent="Bottom/VBoxContainer/GridContainer" index="1"]
+margin_left = 113.0
+margin_right = 162.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="dvUnit" parent="Bottom/VBoxContainer/GridContainer" index="2"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 170.0
+margin_right = 191.0
+
+[node name="flyTripTimeLabel" parent="Bottom/VBoxContainer/GridContainer" index="3"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+
+[node name="flyTripTimeReadout" parent="Bottom/VBoxContainer/GridContainer" index="4"]
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="flyTripTimeUnit" parent="Bottom/VBoxContainer/GridContainer" index="5"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+
+[node name="flyTripFuelLabel" parent="Bottom/VBoxContainer/GridContainer" index="6"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+
+[node name="flyTripFuelReadout" parent="Bottom/VBoxContainer/GridContainer" index="7"]
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="flyTripFuelUnit" parent="Bottom/VBoxContainer/GridContainer" index="8"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+
+[node name="shipMassLabel" parent="Bottom/VBoxContainer/GridContainer" index="9"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 199.0
+margin_top = 0.0
+margin_right = 297.0
+margin_bottom = 14.0
+
+[node name="shipMassReadout" parent="Bottom/VBoxContainer/GridContainer" index="10"]
+margin_left = 305.0
+margin_top = 0.0
+margin_right = 354.0
+margin_bottom = 14.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="shipMassUnit" parent="Bottom/VBoxContainer/GridContainer" index="11"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 362.0
+margin_top = 0.0
+margin_right = 376.0
+margin_bottom = 14.0
+
+[node name="reactorTempLabel" parent="Bottom/VBoxContainer/GridContainer" index="12"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 384.0
+margin_top = 0.0
+margin_right = 503.0
+margin_bottom = 14.0
+
+[node name="reactorTempReadout" parent="Bottom/VBoxContainer/GridContainer" index="13"]
+margin_left = 511.0
+margin_top = 0.0
+margin_right = 539.0
+margin_bottom = 14.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="reactorTempUnit" parent="Bottom/VBoxContainer/GridContainer" index="14"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 547.0
+margin_top = 0.0
+margin_right = 561.0
+margin_bottom = 14.0
+
+[node name="fuelLabel" parent="Bottom/VBoxContainer/GridContainer" index="15"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_top = 14.0
+margin_right = 105.0
+margin_bottom = 28.0
+
+[node name="fuelReadout" parent="Bottom/VBoxContainer/GridContainer" index="16"]
+margin_left = 113.0
+margin_top = 14.0
+margin_right = 162.0
+margin_bottom = 28.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="fuelUnit" parent="Bottom/VBoxContainer/GridContainer" index="17"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 170.0
+margin_top = 14.0
+margin_right = 191.0
+margin_bottom = 28.0
+
+[node name="ammoLabel" parent="Bottom/VBoxContainer/GridContainer" index="18"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 199.0
+margin_top = 14.0
+margin_right = 297.0
+margin_bottom = 28.0
+
+[node name="ammoReadout" parent="Bottom/VBoxContainer/GridContainer" index="19"]
+margin_left = 305.0
+margin_top = 14.0
+margin_right = 354.0
+margin_bottom = 28.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="ammoUnit" parent="Bottom/VBoxContainer/GridContainer" index="20"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 362.0
+margin_top = 14.0
+margin_right = 376.0
+margin_bottom = 28.0
+
+[node name="powerDrawLabel" parent="Bottom/VBoxContainer/GridContainer" index="21"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 384.0
+margin_top = 14.0
+margin_right = 503.0
+margin_bottom = 28.0
+
+[node name="powerDrawReadout" parent="Bottom/VBoxContainer/GridContainer" index="22"]
+margin_left = 511.0
+margin_top = 14.0
+margin_right = 539.0
+margin_bottom = 28.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="powerDrawUnit" parent="Bottom/VBoxContainer/GridContainer" index="23"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 547.0
+margin_top = 14.0
+margin_right = 561.0
+margin_bottom = 28.0
+
+[node name="returnFuelLabel" parent="Bottom/VBoxContainer/GridContainer" index="24"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_top = 28.0
+margin_right = 105.0
+margin_bottom = 42.0
+
+[node name="returnFuelReadout" parent="Bottom/VBoxContainer/GridContainer" index="25"]
+margin_left = 113.0
+margin_top = 28.0
+margin_right = 162.0
+margin_bottom = 42.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="returnFuelUnit" parent="Bottom/VBoxContainer/GridContainer" index="26"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 170.0
+margin_top = 28.0
+margin_right = 191.0
+margin_bottom = 42.0
+
+[node name="dronesLabel" parent="Bottom/VBoxContainer/GridContainer" index="27"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 199.0
+margin_top = 28.0
+margin_right = 297.0
+margin_bottom = 42.0
+
+[node name="dronesReadout" parent="Bottom/VBoxContainer/GridContainer" index="28"]
+margin_left = 305.0
+margin_top = 28.0
+margin_right = 354.0
+margin_bottom = 42.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="dronesUnit" parent="Bottom/VBoxContainer/GridContainer" index="29"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 362.0
+margin_top = 28.0
+margin_right = 376.0
+margin_bottom = 42.0
+
+[node name="powerSupplyLabel" parent="Bottom/VBoxContainer/GridContainer" index="30"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 384.0
+margin_top = 28.0
+margin_right = 503.0
+margin_bottom = 42.0
+
+[node name="powerSupplyReadout" parent="Bottom/VBoxContainer/GridContainer" index="31"]
+margin_left = 511.0
+margin_top = 28.0
+margin_right = 539.0
+margin_bottom = 42.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="powerSupplyUnit" parent="Bottom/VBoxContainer/GridContainer" index="32"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 547.0
+margin_top = 28.0
+margin_right = 561.0
+margin_bottom = 42.0
+
+[node name="returnTripTimeLabel" parent="Bottom/VBoxContainer/GridContainer" index="33"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_top = 42.0
+margin_right = 105.0
+margin_bottom = 56.0
+
+[node name="returnTripTimeReadout" parent="Bottom/VBoxContainer/GridContainer" index="34"]
+margin_left = 113.0
+margin_top = 42.0
+margin_right = 162.0
+margin_bottom = 56.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="returnTripTimeUnit" parent="Bottom/VBoxContainer/GridContainer" index="35"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 170.0
+margin_top = 42.0
+margin_right = 191.0
+margin_bottom = 56.0
+
+[node name="capacitorLabel" parent="Bottom/VBoxContainer/GridContainer" index="36"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 199.0
+margin_top = 42.0
+margin_right = 297.0
+margin_bottom = 56.0
+
+[node name="capacitorReadout" parent="Bottom/VBoxContainer/GridContainer" index="37"]
+margin_left = 305.0
+margin_top = 42.0
+margin_right = 354.0
+margin_bottom = 56.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="capacitorUnit" parent="Bottom/VBoxContainer/GridContainer" index="38"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 362.0
+margin_top = 42.0
+margin_right = 376.0
+margin_bottom = 56.0
+
+[node name="powerBalanceLabel" parent="Bottom/VBoxContainer/GridContainer" index="39"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 384.0
+margin_top = 42.0
+margin_right = 503.0
+margin_bottom = 56.0
+
+[node name="powerBalanceReadout" parent="Bottom/VBoxContainer/GridContainer" index="40"]
+margin_left = 511.0
+margin_top = 42.0
+margin_right = 539.0
+margin_bottom = 56.0
+okColor = Color( 0.160784, 0.815686, 0.839216, 1 )
+
+[node name="powerBalanceUnit" parent="Bottom/VBoxContainer/GridContainer" index="41"]
+modulate = Color( 1, 0.184314, 0.160784, 1 )
+margin_left = 547.0
+margin_top = 42.0
+margin_right = 561.0
+margin_bottom = 56.0
+
+[editable path="Viewports/VisfeedViewport/VisFeedBox/EnceladusFeed"]
+[editable path="Side-R/HBoxContainer/GridContainer"]
+[editable path="Corner-BL/CargoMargin/CargoScanner"]
+[editable path="AutopilotKeyText"]
+[editable path="Bottom/VBoxContainer/GridContainer"]
