@@ -1,6 +1,6 @@
 ;MOD_ID|jcaleb.AftermarketHuds
 ;MOD_NAME|Ganymede Runners' Aftermarket Huds
-;MOD_ICON|https://raw.githubusercontent.com/JCalebBR/AftermarketHuds/refs/heads/main/logo.png
+;MOD_ICON|https://raw.githubusercontent.com/JCalebBR/AftermarketHuds/refs/heads/main/logo-modmenu2.png
 ;AUTHOR|jcaleb
 ;MOD_ZIP_NAME|AftermarketHuds.zip
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grun-logo.png-e034f97a9baef98772a3e7b0a3922905.stex"
+path="res://.import/grun-logo.png-3dcd496fc93a233611a5d4077d544828.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MoreHuds/hud/grun-logo.png"
-dest_files=[ "res://.import/grun-logo.png-e034f97a9baef98772a3e7b0a3922905.stex" ]
+source_file="res://AftermarketHuds/hud/grun-logo.png"
+dest_files=[ "res://.import/grun-logo.png-3dcd496fc93a233611a5d4077d544828.stex" ]
 
 [params]
 

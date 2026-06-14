@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/ringa-cerf-startup-jingle.wav-c254888a1d75c2d5a6a87edafa6f2655.sample"
+path="res://.import/ringa-cerf-startup-jingle.wav-13fb812e550ebb556c48516e2d5aed7d.sample"
 
 [deps]
 
-source_file="res://MoreHuds/hud/cerf-grun/ringa-cerf-startup-jingle.wav"
-dest_files=[ "res://.import/ringa-cerf-startup-jingle.wav-c254888a1d75c2d5a6a87edafa6f2655.sample" ]
+source_file="res://AftermarketHuds/hud/cerf-grun/ringa-cerf-startup-jingle.wav"
+dest_files=[ "res://.import/ringa-cerf-startup-jingle.wav-13fb812e550ebb556c48516e2d5aed7d.sample" ]
 
 [params]
 
