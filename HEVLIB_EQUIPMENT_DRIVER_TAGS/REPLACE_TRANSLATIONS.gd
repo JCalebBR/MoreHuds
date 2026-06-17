@@ -48,5 +48,47 @@ const TRANSLATIONS = {
 			"string": "Provides a top-down display of your ship.\nEnhances LIDAR screen with gravimetric data.\nIdentifies ore in large formations you targeted or are hovering above.\nSpeeds up geologist identification of selected ore.",
 			"version_hash": 3284102073
 		}
+	},
+	"uk_UA": {
+		"GRUN_AFTERMARKETHUDS_DESCRIPTION": {
+			"string": "Ganymede Runners пропонують неофіційні модифікації для різних систем HUD та дронів-розвідників. Незалежним підрядникам наполегливо рекомендується триматися подалі.",
+			"version_hash": 224023240
+		},
+		"GRUN_AFTERMARKETHUDS_BRIEF": {
+			"string": "Ganymede Runners пропонують неофіційні модифікації для систем HUD та дронів-розвідників.",
+			"version_hash": 4101382356
+		},
+		"SYSTEM_HUD_CERF_GRUN": {
+			"string": "G.R. Cernunnos-Libre",
+			"version_hash": 3869365776
+		},
+		"SYSTEM_HUD_CERF_GRUN_DESC": {
+			"string": "Після недавньої хвилі «зусиль з релокації ресурсів компанії», незадоволений працівник злив широкій публіці вихідний код найновішої пропозиції від Machine Astro-Dynamiques. Це неофіційне оновлення HUD для важкого буксира-рятувальника MAD Cernunnos II було створено у співпраці кількох анонімних хакерів, відомих під спільною назвою 'Ganymede Runners'.",
+			"version_hash": 2407860176
+		},
+		"SYSTEM_HUD_CERF_GRUN_SPECS": {
+			"string": "Тут були Ganymede Runners",
+			"version_hash": 3103707796
+		},
+		"SYSTEM_HUD_CERF_GRUN_MANUAL": {
+			"string": "Змінює екранний інтерфейс корабля.\\nСхильний до збоїв та неправильних показань.\\nВикористовуйте спеціалізований HUD для досягнення найкращих результатів.\\n",
+			"version_hash": 3817591316
+		},
+		"SYSTEM_RD_GR_SPECTROMETER_GRAVIMETRIC": {
+			"string": "Runasimi-Obonto Гравісейсмічний дрон ",
+			"version_hash": 1857684335
+		},
+		"SYSTEM_RD_GR_SPECTROMETER_GRAVIMETRIC_DESC": {
+			"string": "Намагаючись повернути прихильність сектору та відновити довіру після витоку даних, який виявив, що Runasimi Inc. та Obonto Microengineering співпрацювали над розробкою моделі \"обладнання як послуга\", на ринок вийшов новий спільно розроблений продукт — гравісейсмічний дрон-розвідник.\\n\\nСтворений на основі нещодавніх проривів у мікросейсмічних сенсорних масивах та високоточних лазерних інтерферометрах, що використовуються в сучасних розвідувальних суднах, новий апарат позиціонується як найкращий інструмент для геологорозвідки в небезпечних просторах кілець Сатурна.",
+			"version_hash": 1085214787
+		},
+		"SYSTEM_RD_GR_SPECTROMETER_GRAVIMETRIC_SPECS": {
+			"string": "Виробники: Runasimi Inc. & Obonto Microengineering\\nДальність: 5 км\\nРоздільна здатність: 5e11 м/с²\\nЧастота дискретизації: 500 зразків/с",
+			"version_hash": 2665113395
+		},
+		"SYSTEM_RD_GR_SPECTROMETER_GRAVIMETRIC_MANUAL": {
+			"string": "Забезпечує відображення вашого корабля зверху вниз.\\nПокращує екран LIDAR гравіметричними даними.\\nІдентифікує руду у великих утвореннях, на які ви націлилися або які зависли над ними.\\nПрискорює геологічну ідентифікацію відібраної руди.",
+			"version_hash": 3284102073
+		}
 	}
 }
