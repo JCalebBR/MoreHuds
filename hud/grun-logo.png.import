@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grun-logo.png-3dcd496fc93a233611a5d4077d544828.stex"
+path="res://AftermarketHuds/hud/grun-logo.stex"
 metadata={
 "vram_texture": false
 }
@@ -10,7 +10,7 @@ metadata={
 [deps]
 
 source_file="res://AftermarketHuds/hud/grun-logo.png"
-dest_files=[ "res://.import/grun-logo.png-3dcd496fc93a233611a5d4077d544828.stex" ]
+dest_files=[ "res://AftermarketHuds/hud/grun-logo.stex" ]
 
 [params]
 
