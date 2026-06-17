@@ -1,3 +1,9 @@
+[0.2.0]
+1="Gracious Distrust"
+2="* Add new graviseismic reconnaissance craft"
+3="* Rename 'MAD Cernunnos II (GRUN ver.)' to 'G.R. Cernunnos-Libre'
+4="* Fix missing jingle and boot logo from Cernunnos-Libre"
+
 [0.1.0]
 
 1="* Initial release"
