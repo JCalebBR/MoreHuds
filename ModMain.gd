@@ -6,7 +6,7 @@ const MOD_PRIORITY = -99
 # Name of the mod, used for writing to the logs
 const MOD_NAME = "Ganymede Runners' Aftermarket Huds"
 const MOD_VERSION_MAJOR = 0
-const MOD_VERSION_MINOR = 1
+const MOD_VERSION_MINOR = 2
 const MOD_VERSION_BUGFIX = 0
 const MOD_VERSION_METADATA = ""
 # Path of the mod folder, automatically generated on runtime
@@ -25,9 +25,12 @@ func _init(modLoader = ModLoader):
 	loadDLC()
 	
 	replaceScene("hud/Hud.tscn")
-
+	
+	installScriptExtension("hud/ShowWhenSystemInstalled.gd")
+	installScriptExtension("hud/components/GravimetricScale.gd")
+	installScriptExtension("hud/GravimetricReadout.gd")
+	
 	l("Initialised!", MOD_NAME)
-
 
 func _ready():
 	l("Ready!")

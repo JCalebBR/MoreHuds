@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/cerf-startup-jingle render 001.wav-3c240251fd612063a7a8ca919d17a52d.sample"
+path="res://AftermarketHuds/hud/cerf-grun/Media/cerf-startup-jingle render 001.sample"
 
 [deps]
 
 source_file="res://AftermarketHuds/hud/cerf-grun/Media/cerf-startup-jingle render 001.wav"
-dest_files=[ "res://.import/cerf-startup-jingle render 001.wav-3c240251fd612063a7a8ca919d17a52d.sample" ]
+dest_files=[ "res://AftermarketHuds/hud/cerf-grun/Media/cerf-startup-jingle render 001.sample" ]
 
 [params]
 

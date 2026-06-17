@@ -3,7 +3,7 @@
 ![logo](logo.png)
 
 Anonymous hackers, collectively known as the "Ganymede Runners".
-The Runners made their debut after Machine Astro-Dynamiques implemented "company resource relocation efforts", which led to a key employee in the Research & Development wing of M.A.D to leak the source code for their latest offering, the HUD for the heavy recovery tug MAD Cernunnos II.
+The Runners made their debut after Machine Astro-Dynamiques implemented "company resource relocation efforts", which led a key employee in the R&D wing of M.A.D to leak the source code for their latest offering, the HUD for the heavy recovery tug MAD Cernunnos II.
 
 > [!WARNING]
 > HevLib is required for this mod to function.
@@ -13,13 +13,27 @@ The Runners made their debut after Machine Astro-Dynamiques implemented "company
 
 ## Features
 
-So far, only one modified HUD with a new boot logo and jingle. This was a proof of concept and will serve as a test bed for new improvements.
+### HUDs
+
+One new hud, the G.R Cernunnos-Libre, a fork of the M.A.D HUD by the Ganymede Runners.
+- Tweaked display elements for legibility
+- Changed boot logo and jingle
+
+### Reconnaissance Craft
+
+One new recon craft, the Graviseismic Series, jointly developed by Runasimi and Obonto
+- Combines gravimetric and microseismic readings into one craft
+
+![](https://i.imgur.com/hoSmq1B.jpeg)
 
 ## Planned:
 
-Tweaked wear/damage/glitch due to aftermarket software
+- Tweaked wear/damage/glitch due to aftermarket software
+- Custom HUDs for modded ships
+- More HUD related improvements
 
 ## Credits
 
 - me, myself and my adhd
 - hev, for HevLib and some initial help <3
+- WT, Ukrainian translations <3
