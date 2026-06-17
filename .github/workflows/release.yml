@@ -67,11 +67,17 @@ jobs:
           mkdir -p build/"$REPO_NAME"
 
           rsync -av . build/"$REPO_NAME" \
+            --exclude '*.xcf' \
+            --exclude '*.psd' \
+            --exclude '*.zip' \
+            --exclude '*.rpp' \
+            --exclude '*.RPP' \
+            --exclude 'Backups/' \
+            --exclude 'Media/' \
             --exclude '.git*' \
             --exclude '.github' \
             --exclude 'build' \
-            --exclude '*.zip'
-
+            
           if [ ! -f "build/$REPO_NAME/Mod.manifest" ]; then
             echo "::error::Mod.manifest is missing from the build folder! Rsync failed."
             exit 1
