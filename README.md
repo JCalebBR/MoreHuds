@@ -9,6 +9,9 @@ The Runners made their debut after Machine Astro-Dynamiques implemented "company
 > HevLib is required for this mod to function.
 > A download can be found from its [releases page](https://github.com/rwqfsfasxc100/HevLib/releases/latest)
 
+> [!CAUTION]
+> Incompatible with mods that extend `res://hud/AutopilotOverlay.gd` and `res://ships/ship-ctrl.gd`
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/jcaleb)
 
 ## Features
