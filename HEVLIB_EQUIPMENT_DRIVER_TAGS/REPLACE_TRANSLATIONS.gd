@@ -47,6 +47,22 @@ const TRANSLATIONS = {
 		"SYSTEM_RD_GR_SPECTROMETER_GRAVIMETRIC_MANUAL": {
 			"string": "Provides a top-down display of your ship.\nEnhances LIDAR screen with gravimetric data.\nIdentifies ore in large formations you targeted or are hovering above.\nSpeeds up geologist identification of selected ore.",
 			"version_hash": 3284102073
+		},
+		"SYSTEM_AUTOPILOT_GR27": {
+			"string": "GR-27 Autopilot",
+			"version_hash": 36068853
+		},
+		"SYSTEM_AUTOPILOT_GR27_DESC": {
+			"string": "This custom-built autopilot was designed for the adventurous miners that can't stop speeding above regulated speeds within the rings. It offers the same capabilities as the ER-42, but with collision warnings built-in.",
+			"version_hash": 3524981308
+		},
+		"SYSTEM_AUTOPILOT_GR27_SPECS": {
+			"string": "Developer: Ganymede Runners\nCapabilities: Adaptive Angular Thrust\nFly-By-Wire\nRotational Thrust Computation\nAntipodal Reaction Limiter\nTrajectory Prediction\nCollision warnings",
+			"version_hash": 2627199171
+		},
+		"SYSTEM_AUTOPILOT_GR27_MANUAL": {
+			"string": "Displays predicted ship course.\nDisplays collision warnings.\nARL: Cancels out opposite thrusters, conserving fuel.\nAAT: Observes cargo mass shifts and thruster damage to compute the minimum thrust required for manoeuvre.\nRTC: Dynamically computes the most performant thrusters to perform any manoeuvre.\nFBW: Routes all manual thruster input through the autopilot.\nCan use gimbaled main drives efficiently.",
+			"version_hash": 2738439038
 		}
 	},
 	"uk_UA": {

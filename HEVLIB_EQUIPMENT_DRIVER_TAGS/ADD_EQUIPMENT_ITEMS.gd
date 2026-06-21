@@ -16,3 +16,11 @@ const RECON_MICROSEISMIC_GRAVIMETRIC = {
 	"equipment_type":"SENSOR_RECON_DRONE",
 	"price":100000
 }
+
+const AUTOPILOT_GR27 = {
+	"system":"SYSTEM_AUTOPILOT_GR27",
+	"price":125000,
+	"test_protocol":"autopilot",
+	"slot_type":"AUTOPILOT",
+	"equipment_type":"COMPUTER_AUTOPILOT"
+}
