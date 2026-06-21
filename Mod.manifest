@@ -10,8 +10,8 @@ credits=["me, myself and my adhd", "hev, for HevLib and some initial help <3"]
 [version]
 
 version_major=0
-version_minor=2
-version_bugfix=1
+version_minor=3
+version_bugfix=0
 version_metadata=""
 
 [tags]
